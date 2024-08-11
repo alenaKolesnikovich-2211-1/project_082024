@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx prettier . --check",
     "format:fix": "npx prettier . --write",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "codestyle": "run-p lint format",
+    "codestyle:fix": "run-s lint:fix format:fix",
+    "build": "babel src --out-dir build --source-maps inline"
   },
   "author": "",
   "license": "ISC",
